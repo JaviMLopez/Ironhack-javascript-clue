@@ -9,7 +9,7 @@ const suspectsArray = [
         age: 45,
         description: "He has a lot of connections",
         color: "green",
-        image: url("htttp://pbs.twimg.com/profile_images/506787499331428352/65jTv2uC.jpeg")
+        image: "htttp://pbs.twimg.com/profile_images/506787499331428352/65jTv2uC.jpeg"
     },
 
     {
@@ -19,7 +19,7 @@ const suspectsArray = [
         age: 26,
         description: " PhD in plant toxicology. Adopted daughter of Mr. Boddy",
         color: "white",
-        image: url("htttp://www.radiotimes.com/uploads/images/Original/111967.jpg")
+        image: "htttp://www.radiotimes.com/uploads/images/Original/111967.jpg"
     },
     {
         firstName: "Victor",
@@ -28,7 +28,7 @@ const suspectsArray = [
         age: 22,
         description: "Billionaire video game designer",
         color: "purple",
-        image: url("htttp://66.media.tumblr.com/ee7155882178f73b3781603f0908617c/tumblr_phhxc7EhPJ1w5fh03_540.jpg")
+        image: "htttp://66.media.tumblr.com/ee7155882178f73b3781603f0908617c/tumblr_phhxc7EhPJ1w5fh03_540.jpg"
     },
     {
         firstName: "Kasandra",
@@ -37,7 +37,7 @@ const suspectsArray = [
         age: 31,
         description: "She is an A-list movie star with a dark past",
         color: "red",
-        image: url("htttp://www.radiotimes.com/uploads/images/Original/111967.jpg")
+        image: "htttp://www.radiotimes.com/uploads/images/Original/111967.jpg"
     },
     {
         firstName: "Eleanor",
@@ -46,7 +46,7 @@ const suspectsArray = [
         age: 36,
         description: "She is from a wealthy family and uses her status and money to earn popularity",
         color: "blue",
-        image: url("https://metrouk2.files.wordpress.com/2016/07/mrs-peacock.jpg")
+        image: "https://metrouk2.files.wordpress.com/2016/07/mrs-peacock.jpg"
     },
     {
         firstName: "Jack",
@@ -55,7 +55,7 @@ const suspectsArray = [
         age: 62,
         description: "He is a former football player who tries to get by on his former glory",
         color: "yellow",
-        image: url("https://static.independent.co.uk/s3fs-public/thumbnails/image/2016/07/04/08/unspecified-3.jpg")
+        image: "https://static.independent.co.uk/s3fs-public/thumbnails/image/2016/07/04/08/unspecified-3.jpg"
     }
 ];
 
@@ -126,12 +126,20 @@ function selectRandom(array) {
 }
 
 function pickMystery() {
+    let a = suspectsArray;
+    let b = weaponsArray;
+    let c = roomsArray;
     let x = {
-        suspect: selectRandom(suspectsArray), 
-        weapon: selectRandom(weaponsArray),
-        room: selectRandom(roomsArray)
-    }
+        suspect: selectRandom(a), 
+        weapon: selectRandom(b),
+        room: selectRandom(c)
+    };
+
+    return x;
 }
-return x;
-}
+
 // ITERATION 3
+
+function revealMystery(envelope){
+    return (envelope.suspect.firstName + " " + envelope.suspect.lastName + " killed Mr. Boddy using the " + envelope.weapon.name + " in the " + envelope.room.name + "!");
+}
